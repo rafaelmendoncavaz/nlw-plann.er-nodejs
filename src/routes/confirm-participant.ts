@@ -11,7 +11,6 @@ export async function confirmParticipant(app: FastifyInstance) {
         
         schema: {
             params: z.object({
-                tripId: z.string().uuid(),
                 participantId: z.string().uuid()
             })
         }
@@ -48,7 +47,7 @@ export async function confirmParticipant(app: FastifyInstance) {
             }
         })
 
-        return reply.redirect(`${env.API_BASE_URL}/trips/${participant.trip_id}`)
+        return reply.redirect(`${env.WEB_BASE_URL}/trips/${participant.trip_id}`)
        
     })
 

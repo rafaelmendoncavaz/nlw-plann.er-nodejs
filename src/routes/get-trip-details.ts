@@ -19,7 +19,7 @@ export async function getTripDetails(app: FastifyInstance) {
 
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             select: {
                 id: true,

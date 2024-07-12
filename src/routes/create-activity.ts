@@ -24,7 +24,7 @@ export async function createActivity(app: FastifyInstance) {
         const { title, occurs_at } = request.body
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId

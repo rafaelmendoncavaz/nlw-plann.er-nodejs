@@ -26,7 +26,7 @@ export async function createInvite(app: FastifyInstance) {
         const { email } = request.body
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId
@@ -40,7 +40,7 @@ export async function createInvite(app: FastifyInstance) {
 
         }
 
-        const participant = await prisma.trip.participant.create({
+        const participant = await prisma.participant.create({
             data: {
                 email,
                 trip_id: tripId

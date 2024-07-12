@@ -18,7 +18,7 @@ export async function getParticipant(app: FastifyInstance) {
 
         const { participantId } = request.params
 
-        const participant = await prisma.trip.find.unique({
+        const participant = await prisma.participant.findUnique({
 
             select: {
                 id: true,
@@ -39,7 +39,7 @@ export async function getParticipant(app: FastifyInstance) {
         }
 
         return {
-           participant: participant.id
+           participant
         }
     }
 

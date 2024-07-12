@@ -23,7 +23,7 @@ export async function createLink(app: FastifyInstance) {
         const { title, url } = request.body
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId
@@ -37,7 +37,7 @@ export async function createLink(app: FastifyInstance) {
 
         }
 
-        const link = await prisma.activity.create({
+        const link = await prisma.link.create({
 
             data: {
                 title,

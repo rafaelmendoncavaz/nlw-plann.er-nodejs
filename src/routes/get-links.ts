@@ -19,7 +19,7 @@ export async function getLinks(app: FastifyInstance) {
 
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId

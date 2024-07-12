@@ -19,7 +19,7 @@ export async function getActivities(app: FastifyInstance) {
 
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId
@@ -62,7 +62,7 @@ export async function getActivities(app: FastifyInstance) {
         })
 
         return {
-           activities: trip.activities
+           activities
         }
     }
 

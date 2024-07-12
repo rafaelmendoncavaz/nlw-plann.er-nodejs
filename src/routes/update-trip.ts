@@ -25,7 +25,7 @@ export async function updateTrip(app: FastifyInstance) {
         const { destination, starts_at, ends_at } = request.body
         const { tripId } = request.params
 
-        const trip = await prisma.trip.find.unique({
+        const trip = await prisma.trip.findUnique({
 
             where: {
                 id: tripId
