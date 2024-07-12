@@ -19,7 +19,7 @@ import { env } from "./env"
 const app = fastify()
 
 app.register(cors, {
-    origin: "http://localhost:3333"
+    origin: `*`
 })
 
 app.setValidatorCompiler(validatorCompiler)
@@ -42,5 +42,5 @@ app.register(getTripDetails)
 
 app.listen({ port: env.PORT })
 .then(() => {
-    console.log("Server is running!")
+    console.log(`Server is running! Port: ${env.PORT}`)
 })

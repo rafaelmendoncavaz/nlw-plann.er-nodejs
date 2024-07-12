@@ -7,7 +7,7 @@ import { env } from "../env"
 
 export async function confirmParticipant(app: FastifyInstance) {
 
-    app.withTypeProvider<ZodTypeProvider>().get("/trips/:participantId/confirm", {
+    app.withTypeProvider<ZodTypeProvider>().get("/participants/:participantId/confirm", {
         
         schema: {
             params: z.object({

@@ -15,14 +15,14 @@ model Trip {
   is_confirmed Boolean  @default(false)
   created_at   DateTime @default(now())
 
-  participants Participants[]
+  participants Participant[]
   activities   Activity[]
   links        Link[]
 
   @@map("trips")
 }
 
-model Participants {
+model Participant {
   id           String  @id @default(uuid())
   name         String?
   email        String
